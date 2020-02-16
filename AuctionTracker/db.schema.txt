@@ -1,0 +1,31 @@
+--
+-- Table structure for table `rav_auctiontracker`
+--
+
+CREATE TABLE IF NOT EXISTS `rav_auctiontracker` (
+  `hash` char(8) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `itemname` char(40) NOT NULL,
+  `seller` char(16) NOT NULL,
+  `price` int(11) NOT NULL,
+  PRIMARY KEY  (`hash`),
+  KEY `itemname` (`itemname`(20))
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure for table `rav_auctioncontrib`
+--
+
+CREATE TABLE IF NOT EXISTS `rav_auctioncontrib` (
+  `player` char(16) NOT NULL,
+  `submitted` datetime NOT NULL,
+  `min_log` datetime NOT NULL,
+  `max_log` datetime NOT NULL,
+  `filename` char(20) NOT NULL,
+  `num_lines` int(11) NOT NULL,
+  `num_auctions` int(11) NOT NULL,
+  `num_prices` int(11) NOT NULL,
+  `num_added` int(11) NOT NULL,
+  `submit_ip` varchar(15) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
